@@ -48,18 +48,16 @@
 		{{#rows}}
 		<!--<div id="{{rowNumber}}" class="tool-box {{#checkedout}}not-{{/checkedout}}available">-->
         <div id="{{rowNumber}}" class="tool-box">
-			<span class="tool-box-tool">{{tool}}</span>
+			<span class="tool-box-tool">{{title}}</span>
 			<div class="tool-box-bottom {{rowNumber}}">
+                <!--
 				{{#checkedout}} <span class="tool-box-borrowed">ON LOAN</span>{{/checkedout}}
-				{{^checkedout}}<a href="mailto:{{owneremail}}?subject=Tool Lending: {{tool}}"><span class="tool-box-borrow btn">BORROW</span></a>{{/checkedout}}
+				{{^checkedout}}<a href="mailto:{{owneremail}}?subject=Tool Lending: {{tool}}"><span class="tool-box-borrow btn">BORROW</span></a>{{/checkedout}}-->
 				<ul>
-					<li><small>WHO / WHERE : </small></li>
-					<li><a href="mailto:{{owneremail}}">{{owner}}</a></li>
-					<li>{{street}}, {{city}}, {{state}}</li>
-					<li><a href="https://maps.google.com/maps?q={{street}},{{city}},{{state}}" target="_blank"><small>MAP</small></a></li>
-					{{#tooldetails}}
-					<li><small>NOTES : </small>{{tooldetails}}</li>
-					{{/tooldetails}}
+                    {{#series}}<li>Part of the {{series}}</li>{{/series}}
+					<li><small>A {{genre}} by {{author}}</small></li>
+                    <li>{{punchline}}</li>
+                    <li>{{description}}</li>
 				</ul>
 			</div>
 		</div>
@@ -68,7 +66,7 @@
 
 		<script type="text/javascript">
 		  document.addEventListener('DOMContentLoaded', function() {
-	      var URL = "0AvFUWxii39gXdGxhcjhzYzlBX2pyVFZZU2VjZ3BHZ3c"
+	      var URL = "1ZTfG1prcDVLyOqggLictvL6ctkQoBqe0YwWMXqQOQ88"
 	      Tabletop.init( { key: URL, callback: drawToolBox, simpleSheet: true } )
 	    })
 		</script>
