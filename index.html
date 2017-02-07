@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 	<html lang="en">
-		<title>Book</title>
+		<title>insert name here</title>
 		<meta charset='utf-8'>
 		<script type="text/javascript" src="js/ICanHaz.js"></script>
 		<script type="text/javascript" src='js/jquery.js'></script>
@@ -12,7 +12,7 @@
 	</head>
 	<body>
 		<header class="container">
-			<h1>BOOK</h1>
+			<h1>INSERT EPIC NAME HERE</h1>
             <!--<ul class="nav">
 				<li><strong>LENDING IS LOVELY</strong></li>
 				<li>AN OPEN SOURCE, EASY TO DUPLICATE PROJECT</li>
@@ -20,7 +20,7 @@
 			</ul>-->
 		</header>
 		<div id="filters" class="container">
-			<input id="toolSearch" type="search" placeholder="Book Title"></input>
+			<input id="toolSearch" type="search" placeholder="enter book title or genre"></input>
 			<!--<span class="clear sml-button">Clear</span>
 			<span id="showAvailable" class="sml-button">Show Available</span>-->
 		</div>
@@ -47,7 +47,7 @@
 		<script id="tools" type="text/html">
 		{{#rows}}
 		<!--<div id="{{rowNumber}}" class="tool-box {{#checkedout}}not-{{/checkedout}}available">-->
-        <div id="{{rowNumber}}" class="tool-box available">
+        <div id="{{rowNumber}}" class="tool-box">
 			<span class="tool-box-tool">{{tool}}</span>
 			<div class="tool-box-bottom {{rowNumber}}">
 				{{#checkedout}} <span class="tool-box-borrowed">ON LOAN</span>{{/checkedout}}
