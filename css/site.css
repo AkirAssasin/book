@@ -25,12 +25,6 @@ a:hover, .tool-box a:hover {
     border-color: var(--link-hover-color);
 }
 
-small {
-    font-weight: 700; 
-    font-size: 11px; 
-    letter-spacing: .08em;
-}
-
 h1, h2, h3, h4, h5 {
     color: var(--static-color); 
 }
@@ -205,7 +199,7 @@ input[type="search"]::-webkit-search-results-decoration {
     text-align: center; 
     width: 100%;
     cursor: pointer; 
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .tool-box:hover {
@@ -223,44 +217,6 @@ input[type="search"]::-webkit-search-results-decoration {
     margin: 10px 0px;
 }
 
-.tool-box-borrow {
-    display: block; 
-    box-sizing: border-box; 
-    -mox-box-sizing: border-box; 
-    position: relative;
-    background: #EEE; 
-    color: #444;
-    padding: 4px 0px; 
-    letter-spacing: .08em; 
-    font-weight: 900;
-    text-align: center; 
-    width: 100%; 
-    margin: 12px 0px; 
-    cursor: pointer; 
-    border: 1px solid transparent;
-}
-
-.tool-box-borrow:hover { 
-    border: 1px solid var(--link-hover-color); 
-    color: #fff; 
-    background-color: var(--link-hover-color);
-}
-
-.tool-box-borrowed {
-    display: block; 
-    box-sizing: border-box; 
-    -moz-box-sizing: border-box; 
-    position: relative;
-    background: #454545; 
-    color: #EEE; 
-    padding: 4px 0px; 
-    letter-spacing: .08em; 
-    font-weight: 900;
-    text-align: center; 
-    width: 100%; 
-    margin: 12px 0px; 
-}
-
 .tool-box-bottom {
     display: none; 
     width: 100%;
@@ -273,6 +229,25 @@ input[type="search"]::-webkit-search-results-decoration {
 
 a.imglink {
     border: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.author {
+    font-weight: normal;
+    font-size: 70%;
+    color: #777;
+}
+
+.lighter {
+    font-weight: lighter;
+}
+
+.heavier {
+    font-size: 110%; 
+    font-weight: 600;
 }
 
 /*!

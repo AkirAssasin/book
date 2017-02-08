@@ -47,17 +47,19 @@
 		<script id="tools" type="text/html">
 		{{#rows}}
 		<!--<div id="{{rowNumber}}" class="tool-box {{#checkedout}}not-{{/checkedout}}available">-->
-        <div id="{{rowNumber}}" class="tool-box">
-			<span class="tool-box-tool">{{title}}</span>
+        <div id="{{rowNumber}}" class="tool-box {{^availability}}hidden{{/availability}}">
+            <span class="tool-box-tool">{{title}} <small class="author">by {{author}}</small> <small class="hidden">{{series}}{{genre}}</small></span>
 			<div class="tool-box-bottom {{rowNumber}}">
+                <hr>
                 <!--
 				{{#checkedout}} <span class="tool-box-borrowed">ON LOAN</span>{{/checkedout}}
 				{{^checkedout}}<a href="mailto:{{owneremail}}?subject=Tool Lending: {{tool}}"><span class="tool-box-borrow btn">BORROW</span></a>{{/checkedout}}-->
 				<ul>
                     {{#series}}<li>Part of the {{series}}</li>{{/series}}
-					<li><small>A {{genre}} by {{author}}</small></li>
-                    <li>{{punchline}}</li>
+                    <li class="heavier"><i>{{punchline}}</i></li>
                     <li>{{description}}</li>
+                    <hr>
+                    <li>{{genre}}, {{cover}}, {{numberofpages}} pages</li>
 				</ul>
 			</div>
 		</div>
