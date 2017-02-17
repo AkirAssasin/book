@@ -2,16 +2,25 @@
 	<html lang="en">
 		<title>insert name here</title>
 		<meta charset='utf-8'>
-		<script type="text/javascript" src="js/ICanHaz.js"></script>
-		<script type="text/javascript" src='js/jquery.js'></script>
-		<script type="text/javascript" src='js/site.js'></script>
-		<script type="text/javascript" src='js/tabletop1.3.4.js'></script>
-		<link rel="shortcut icon" href="https://raw.githubusercontent.com/jlord/lending-library/gh-pages/favico.png"/>
-		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,700,900' rel='stylesheet' type='text/css'>
-		<link media="screen" rel="stylesheet" type="text/css" href="css/site.css">
+        
+		<link rel="shortcut icon" href="favico.png"/>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/site.css" rel="stylesheet">
 	</head>
 	<body>
-		<header class="container">
+        <nav class="navbar navbar-custom navbar-fixed-top top-nav-collapse" role="navigation">
+            <div class="container">
+                <!--<div class="navbar-header">-->
+                    <div class="calc-container">
+                        <input id="priceCalc" type="search" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="trade-in pages"></input>
+                        <span id="priceDisplay">trade-in pages</span>
+                    </div>
+                <!--</div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        </nav>
+		<header>
 			<h1>INSERT EPIC NAME HERE</h1>
             <!--<ul class="nav">
 				<li><strong>LENDING IS LOVELY</strong></li>
@@ -20,6 +29,7 @@
 			</ul>-->
 		</header>
 		<div id="filters" class="container">
+            
 			<input id="toolSearch" type="search" placeholder="enter book title or genre"></input>
 			<!--<span class="clear sml-button">Clear</span>
 			<span id="showAvailable" class="sml-button">Show Available</span>-->
@@ -47,7 +57,7 @@
 		<script id="tools" type="text/html">
 		{{#rows}}
 		<!--<div id="{{rowNumber}}" class="tool-box {{#checkedout}}not-{{/checkedout}}available">-->
-        <div id="{{rowNumber}}" class="tool-box {{^availability}}hidden{{/availability}}">
+        <div id="{{rowNumber}}" class="tool-box {{#status}}hidden{{/status}}" {{^status}}data-page-num="{{numberofpages}}{{/status}}">
             <span class="tool-box-tool">{{title}} <small class="author">by {{author}}</small> <small class="hidden">{{series}}{{genre}}</small></span>
 			<div class="tool-box-bottom {{rowNumber}}">
                 <hr>
@@ -73,4 +83,11 @@
 	    })
 		</script>
 	</body>
+
+    <script src='js/jquery.js'></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/ICanHaz.js"></script>
+    <script src='js/site.js'></script>
+    <script src='js/tabletop1.3.4.js'></script>
+
 </html>

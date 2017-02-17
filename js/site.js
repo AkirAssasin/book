@@ -1,3 +1,20 @@
+/*
+function collapseNavbar() {
+    if ($(".navbar").offset().top > 50) {
+        $(".navbar-fixed-top").addClass("top-nav-collapse");
+    } else {
+        $(".navbar-fixed-top").removeClass("top-nav-collapse");
+    }
+}
+
+$(window).scroll(collapseNavbar);
+$(document).ready(collapseNavbar);
+*/
+
+/*--------------------------------------------------------------------------------------
+---------------------------------- S H E E T S E E -------------------------------------
+--------------------------------------------------------------------------------------*/
+
 function drawToolBox(data) {
   var tools = ich.tools({
     'rows': data
@@ -28,6 +45,45 @@ $(document).on('keyup', '#toolSearch', function(e) {
   filterTools(text)
 })
 
+$(document).on('keyup', '#priceCalc', function(e) {
+  var text = $(e.target).val().trim().toLowerCase()
+
+  if (text === '') {
+      document.getElementById("priceDisplay").textContent = "trade-in pages";
+  } else {
+      calculatePrice(e.target);
+  }
+})
+
+function calculatePrice(e) {
+    if ($(e).val() === '') {
+        document.getElementById("priceDisplay").textContent = "trade-in pages";
+    } else {
+        var userValue = parseInt($(e).val(),10);
+        console.log(userValue);
+        var totalValue = 0;
+        var price = 5;
+        var hasSelection = false;
+        $('.selected-tool').each(function(){
+            hasSelection = true;
+            totalValue += parseInt($(this).data('pageNum'),10);
+        });
+        if (hasSelection) {
+            if (totalValue > userValue) {
+                price += Math.floor(Math.floor((totalValue - userValue)/40) * 2);
+                console.log(totalValue);
+                document.getElementById("priceDisplay").textContent = "RM" + price;
+            } else {
+                document.getElementById("priceDisplay").textContent = "select more books";
+            }
+        } else {
+            document.getElementById("priceDisplay").textContent = "select books";
+        }
+    }
+        
+}
+
+
 $(document).on( 'click', '.tool-box-tool', function(e) {
   var rowNumber = $(this).closest("div").attr("id")
   if ($(this).closest('div').hasClass('selected-tool')) {
@@ -38,6 +94,8 @@ $(document).on( 'click', '.tool-box-tool', function(e) {
     $('.tool-box-bottom' + '.' + rowNumber).css('display', 'inherit')
     $(this).closest('div').addClass('selected-tool')
   }
+    
+    calculatePrice($('#priceCalc'));
 })
 /*
 function toggleAvailable() {
@@ -73,3 +131,7 @@ function filterTools(text) {
   } else $(this).parent().hide()
   })
 }
+
+$(document).ready(function(){
+  
+});
