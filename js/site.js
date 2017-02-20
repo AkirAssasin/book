@@ -62,17 +62,19 @@ function calculatePrice(e) {
         var userValue = parseInt($(e).val(),10);
         console.log(userValue);
         var totalValue = 0;
-        var price = 5;
+        var price = 0;
+        var bookCount = 0;
         var hasSelection = false;
         $('.selected-tool').each(function(){
-            hasSelection = true;
+            bookCount += 1;
+            price += 5;
             totalValue += parseInt($(this).data('pageNum'),10);
         });
-        if (hasSelection) {
+        if (bookCount > 0) {
             if (totalValue > userValue) {
-                price += Math.floor(Math.floor((totalValue - userValue)/40) * 2);
+                price += Math.floor((totalValue - userValue)/10);
                 console.log(totalValue);
-                document.getElementById("priceDisplay").textContent = "RM" + price;
+                document.getElementById("priceDisplay").textContent = "RM" + price + " for " + bookCount + " books";
             } else {
                 document.getElementById("priceDisplay").textContent = "select more books";
             }

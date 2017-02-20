@@ -6,22 +6,28 @@
 		<link rel="shortcut icon" href="favico.png"/>
         <link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/site.css" rel="stylesheet">
+        <!-- Magnific CSS -->
+        <link href="css/magnific-popup.css" rel="stylesheet">
 	</head>
 	<body>
-        <nav class="navbar navbar-custom navbar-fixed-top top-nav-collapse" role="navigation">
+        <nav class="navbar navbar-custom navbar-fixed-bottom bottom-nav-collapse" role="navigation">
             <div class="container">
                 <!--<div class="navbar-header">-->
-                    <div class="calc-container">
-                        <input id="priceCalc" type="search" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="trade-in pages"></input>
-                        <span id="priceDisplay">trade-in pages</span>
-                    </div>
+                <a href="#price-popup" class="popup-info price-check-button">PRICE CHECK</a>
                 <!--</div>
                 <!-- /.navbar-collapse -->
             </div>
             <!-- /.container -->
         </nav>
+
+       
+        <!-- POP UP -->
+        <div id="price-popup" class="dark-popup mfp-hide">
+            <input id="priceCalc" type="search" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="enter trade-in pages"></input>
+            <span id="priceDisplay">trade-in pages</span>
+        </div>
 		<header>
-			<h1>INSERT EPIC NAME HERE</h1>
+			<h1>THE OUTPOST</h1>
             <!--<ul class="nav">
 				<li><strong>LENDING IS LOVELY</strong></li>
 				<li>AN OPEN SOURCE, EASY TO DUPLICATE PROJECT</li>
@@ -30,7 +36,7 @@
 		</header>
 		<div id="filters" class="container">
             
-			<input id="toolSearch" type="search" placeholder="enter book title or genre"></input>
+			<input id="toolSearch" type="search" placeholder="search..."></input>
 			<!--<span class="clear sml-button">Clear</span>
 			<span id="showAvailable" class="sml-button">Show Available</span>-->
 		</div>
@@ -89,5 +95,7 @@
     <script src="js/ICanHaz.js"></script>
     <script src='js/site.js'></script>
     <script src='js/tabletop1.3.4.js'></script>
+    <script src="js/magnific-popup.js"></script>
+    <script src="js/magnific-init.js"></script>
 
 </html>
