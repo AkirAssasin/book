@@ -12,20 +12,11 @@
 	<body>
         <nav class="navbar navbar-custom navbar-fixed-bottom" role="navigation">
             <div class="container">
-                <!--<div class="navbar-header">-->
-                <a href="#price-popup" class="popup-info price-check-button">PRICE CHECK</a>
-                <!--</div>
-                <!-- /.navbar-collapse -->
+               <input id="priceCalc" type="search" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="enter trade-in pages"></input>
             </div>
             <!-- /.container -->
         </nav>
 
-       
-        <!-- POP UP -->
-        <div id="price-popup" class="dark-popup mfp-hide">
-            <input id="priceCalc" type="search" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="enter trade-in pages"></input>
-            <span id="priceDisplay">trade-in pages</span>
-        </div>
 		<header>
 			<h1>THE OUTPOST</h1>
             <!--<ul class="nav">
@@ -63,8 +54,15 @@
 		<script id="tools" type="text/html">
 		{{#rows}}
 		<!--<div id="{{rowNumber}}" class="tool-box {{#checkedout}}not-{{/checkedout}}available">-->
-        <div id="{{rowNumber}}" class="tool-box {{#status}}hidden{{/status}}" {{^status}}data-page-num="{{numberofpages}}{{/status}}">
-            <span class="tool-box-tool">{{title}} <small class="author">by {{author}}</small> <small class="hidden">{{series}}{{genre}}</small></span>
+        <div id="{{rowNumber}}" class="tool-box {{#status}}hidden{{/status}}">
+            <div class="flex-container">
+                <div class="flex-box">
+                    <span class="tool-box-tool">{{title}} <small class="author">by {{author}}</small> <small class="hidden">{{series}}{{genre}}</small></span>
+                </div>
+                <div class="price-tag-container">
+                    <span class="price-tag" {{^status}}data-page-num="{{numberofpages}}"{{/status}}></span>
+                </div>
+            </div>
 			<div class="tool-box-bottom {{rowNumber}}">
                 <hr>
                 <!--
@@ -91,11 +89,12 @@
 	</body>
 
     <script src='js/jquery.js'></script>
+    <script src='js/tether.min.js'></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/ICanHaz.js"></script>
-    <script src='js/site.js'></script>
     <script src='js/tabletop1.3.4.js'></script>
     <script src="js/magnific-popup.js"></script>
     <script src="js/magnific-init.js"></script>
+    <script src='js/site.js'></script>
 
 </html>

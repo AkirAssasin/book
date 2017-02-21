@@ -49,27 +49,34 @@ $(document).on('keyup', '#priceCalc', function(e) {
   var text = $(e.target).val().trim().toLowerCase()
 
   if (text === '') {
-      document.getElementById("priceDisplay").textContent = "trade-in pages";
+      //document.getElementById("priceDisplay").textContent = "trade-in pages";
   } else {
       calculatePrice(e.target);
   }
 })
 
 function calculatePrice(e) {
+    console.log("Attempting price calculation");
     if ($(e).val() === '') {
-        document.getElementById("priceDisplay").textContent = "trade-in pages";
+        //document.getElementById("priceDisplay").textContent = "trade-in pages";
     } else {
         var userValue = parseInt($(e).val(),10);
-        console.log(userValue);
-        var totalValue = 0;
-        var price = 0;
-        var bookCount = 0;
-        var hasSelection = false;
-        $('.selected-tool').each(function(){
-            bookCount += 1;
-            price += 5;
-            totalValue += parseInt($(this).data('pageNum'),10);
+        //console.log("Obtained user value: " + userValue);
+        $('.price-tag').each(function(){
+            var price = 8;
+            var diff = (parseInt($(this).data('pageNum'),10)) - userValue;
+            if (diff <= 300 && diff >= -300) {
+                price += Math.floor((diff/300) * 5);
+                console.log("Price calculated: " + price);
+                console.log($(this).text());
+                $(this).text("RM" + price);
+            } else {
+                console.log("Difference too large");
+                $(this).text("");
+            }
+            
         });
+        /*
         if (bookCount > 0) {
             if (totalValue > userValue) {
                 price += Math.floor((totalValue - userValue)/10);
@@ -81,23 +88,23 @@ function calculatePrice(e) {
         } else {
             document.getElementById("priceDisplay").textContent = "select books";
         }
+        */
     }
         
 }
 
 
 $(document).on( 'click', '.tool-box-tool', function(e) {
-  var rowNumber = $(this).closest("div").attr("id")
-  if ($(this).closest('div').hasClass('selected-tool')) {
+    var div = $(this).parent().parent().parent();
+  var rowNumber = div.attr("id")
+  if (div.hasClass('selected-tool')) {
     $('.tool-box-bottom' + '.' + rowNumber).css('display', 'none')
-    $(this).closest('div').removeClass('selected-tool')
+    div.removeClass('selected-tool')
   }
   else {
     $('.tool-box-bottom' + '.' + rowNumber).css('display', 'inherit')
-    $(this).closest('div').addClass('selected-tool')
+    div.addClass('selected-tool')
   }
-    
-    calculatePrice($('#priceCalc'));
 })
 /*
 function toggleAvailable() {
@@ -129,8 +136,8 @@ function filterTools(text) {
   $('.tool-box-tool').each(function() {
   var tool = $(this).html().toLowerCase()
   if (tool.match(text) || text == '') {
-    $(this).parent().show()
-  } else $(this).parent().hide()
+    $(this).parent().parent().parent().show()
+  } else $(this).parent().parent().parent().hide()
   })
 }
 
