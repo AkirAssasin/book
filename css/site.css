@@ -26,7 +26,7 @@
 }
 
 body {
-    background-color: #555;
+    background-color: #444;
     background-image: url("tile.png");
     background-repeat: repeat;
     font-family: var(--main-font); 
@@ -37,8 +37,7 @@ body {
 
 a {
     text-decoration: none; 
-    color: inherit; 
-    border-bottom: 1px dotted;
+    color: inherit;
 }
 
 a:hover, .tool-box a:hover {
@@ -155,7 +154,7 @@ ul.nav a:hover {
 #toolSearch {
     margin: 19px 4px; 
     border: none;
-    border-bottom: 2px solid var(--static-color); 
+    border-bottom: 2px solid var(--gold-color); 
     background-color: transparent; 
     padding: 0px;
     font-family: var(--main-font); 
@@ -192,8 +191,8 @@ ul.nav a:hover {
 }
 
 .help-button { 
-    color: #EEE;
-    background-color: var(--gold-color);
+    color: var(--gold-color);
+    background-color: #555;
     display: block; 
     font-size: 26px; 
     padding: 0px;
@@ -201,11 +200,15 @@ ul.nav a:hover {
     text-align: center;
     vertical-align: middle;
     width: 46px;
-    height: 46px;
+    height: 38px;
     cursor: pointer; 
     font-weight: bold;
     border: none;
     border-radius: 3px;
+}
+
+.white {
+    color: #EEE;
 }
 
 hr {
@@ -220,10 +223,19 @@ hr {
     display: flex;
 }
 
+.left-container {
+    float: left;
+    margin-left: auto;
+}
+.right-container {
+    float: right;
+    margin-right: auto;
+}
+
 #priceCalc {
     padding: 0px;
     border: none;
-    border-bottom: 2px solid var(--static-color); 
+    border-bottom: 2px solid var(--gold-color); 
     background-color: transparent; 
     margin: auto;
     font-family: var(--main-font); 
@@ -239,7 +251,7 @@ p {
     padding: 1px 10px; 
     text-align: center;  
     font-weight: 300;
-    color: #EEE;
+    color: var(--gold-color);
 }
 
 input[type="search"]::-webkit-search-decoration,
