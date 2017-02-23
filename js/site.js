@@ -58,6 +58,17 @@ $(document).on( 'click', '.tool-box-tool', function(e) {
   }
 })
 
+$(document).on( 'click', '.help-button', function(e) {
+    $('.help-container').each(function(){
+        var div = $(this);
+        if (div.hasClass('hidden')) {
+            div.removeClass('hidden')
+        } else {
+            div.addClass('hidden')
+        }
+    })
+})
+
 function clearSearch(e) {
   console.log('clear')
   $('#toolSearch').val('')

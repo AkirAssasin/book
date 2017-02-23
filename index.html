@@ -10,26 +10,28 @@
         <link href="css/magnific-popup.css" rel="stylesheet">
 	</head>
 	<body>
-        <div id="help-popup" class="help-container dark-popup mfp-hide">
-                <img src="img/icon.png" width="250px" height="250px">
-            <p></p>
-            <p>Welcome to the <c class="white">Outpost</c>!</p>
-            <p><c class="white">Trade in books</c> you don't want for books you want to <c class="white">get huge discounts</c>.</p>
-            <p>Use the <c class="white">price calculator</c> beside the help button to calculate the price for books.</p>
-            <p>We calculate the price <c class="white">based on the number of pages books contain</c>. If the price does not appear it means that the page difference is too high!</p>
-        </div>
 
 		<header>
             <img src="img/icon.png" width="300px" height="300px">
 		</header>
 
-		<div id="filters" class="container">
-			<input id="toolSearch" type="search" placeholder="search..."></input>
-		</div>
+        <div class="help-container">
+            <p>Welcome to the <c class="white">Outpost</c>!</p>
+            <p><c class="white">Trade in books</c> you don't want for books you want to <c class="white">get huge discounts</c>.</p>
+            <p>Use the <c class="white">price calculator</c> below to calculate the price for books. Just <c class="white">enter the number of pages of the book you want to trade-in</c>.</p>
+        </div>
         <div class="flex-container calc-container">
             <div class="left-container"><input id="priceCalc" type="tel" placeholder="trade-in pages"></input></div>
-            <div class="right-container"><a href="#help-popup" class="popup-info"><div class="help-button">?</div></a></div>
+            <div class="right-container"><!--<div class="help-button">?</div>--></div>
         </div>
+        <div class="help-container">
+            <p>We calculate the price <c class="white">based on the number of pages books contain</c>. If the price does not appear it means that the page difference is too high!</p>
+            <p>You can click on the book titles to view more information.</p>
+        </div>
+
+        <div id="filters" class="container">
+			<input id="toolSearch" type="search" placeholder="search..."></input>
+		</div>
 
 		<div id="tools" class="container"><span class="flash animated">LOADING...</span></div>
         
