@@ -421,22 +421,19 @@ Licensed under the MIT license
     animation-name: flash;
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 320px) and (max-width: 1024px) {
-  .span1 {max-width: 100%;}
-}
-
 .mobile-only {display: none;}
 .mobile-hide {display: inline;}
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 320px) and (max-width: 1024px) {
+    .span1 {max-width: 100%;}
     .mobile-only {display: inline;}
     .mobile-hide {display: none;}
     
     .container, header {
-    max-width: none; 
-    margin: 0px auto; 
-    overflow: auto; 
-    padding: 20px 0px; 
-    text-align: center;
-}
+        max-width: none; 
+        margin: 0px auto; 
+        overflow: auto; 
+        padding: 20px 0px; 
+        text-align: center;
+    }
 }
