@@ -38,7 +38,7 @@
             <div id="{{rowNumber}}" class="tool-box {{#status}}hidden{{/status}}">
                 <div class="flex-container">
                     <div class="flex-box">
-                        <span class="tool-box-tool">{{title}} <small class="author">by {{author}}</small> <small class="hidden">{{series}}{{genre}}</small></span>
+                        <span class="tool-box-tool">{{title}} <small class="author mobile-hide">by {{author}}</small> <small class="hidden">{{series}}{{genre}}</small></span>
                     </div>
                     <div class="price-tag-container">
                         <span class="price-tag" {{^status}}data-page-num="{{numberofpages}}"{{/status}}></span>
@@ -47,6 +47,7 @@
                 <div class="tool-box-bottom {{rowNumber}}">
                 <hr>
                     <ul>
+                        <li class="heaviest mobile-only">by {{author}}</li>
                         {{#series}}<li>Part of the {{series}}</li>{{/series}}
                         <li class="heavier"><i>{{punchline}}</i></li>
                         <li>{{description}}</li>
