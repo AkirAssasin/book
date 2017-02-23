@@ -431,10 +431,10 @@ Licensed under the MIT license
     .mobile-hide {display: none;}
     
     .container, header {
-        max-width: none; 
+        max-width: 10000000px; 
         margin: 0px auto; 
         overflow: auto; 
-        padding: 20px 0px; 
+        padding: 10px 0px; 
         text-align: center;
     }
 }
