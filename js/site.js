@@ -34,10 +34,14 @@ function calculatePrice(e) {
         userValue = parseInt($(e).val(),10);
     }
     $('.price-tag').each(function(){
-        var price = 8;
+        var price;
         var diff = (parseInt($(this).data('pageNum'),10)) - userValue;
-        if (userValue >= 80 && diff <= 300 && diff >= -150) {
-            price += Math.round((diff/300) * 8);
+        if (userValue >= 80 && diff <= 250 && diff >= -150) {
+            if (diff <= 0) {
+                price = 1;
+            } else {
+                price = Math.ceil((diff/250) * 10);
+            }
             $(this).text("RM" + price);
         } else {
             $(this).text("");
